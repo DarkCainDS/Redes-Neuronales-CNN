@@ -1,0 +1,29 @@
+Data Augmentation
+
+Data augmentation: busca mejorar el rendimiento, la precisión de nuestro modelo aumentando la cantidad y estilo de datos.
+
+Es difícil obtener y clasificar las imágenes para entrenar el modelo?
+
+Tiende a serlo ya que se usan ambientes especiales para tomar una fotografía, sea de manera o no profesional. Luz, escenario, etc.
+
+Data augmentation toma una imagen y le hace ciertas modificaciones como:
+
+Hacerle zoom **
+
+Desplazar la imagen de sus ejes X, & Y
+
+Aumentar el brillo
+
+Rotar la imagen: Esto no es más que un relleno en los espacios de la imagen que inicialmente no pertenecían a esta. Tiende a rotar la imagen sobre su eje. _ Keras_ tiene facultades que permiten hacer fill_mode del tipo:
+
+Nearest
+
+** Reflect:** muestra una imagen tipo espejo
+
+** Wrap:** crea una tira consecutiva de la imagen para completar los espacios.
+
+Width & Height_shift_range: se desplaza sobre el ancho y el alto de la imagen.
+
+A modo de sumario, Data Augmentation lo que hace es mantener la foto con sus características principales pero creando imágenes distintas.
+
+La máquina observa dos fotos “** parecidas**” pero con características similar. Esto es lo buscado y deseado al llevar a cabo un entrenamiento que pueda encontrar estas características

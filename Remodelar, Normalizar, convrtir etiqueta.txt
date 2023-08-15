@@ -1,0 +1,20 @@
+train_images = train_images.reshape(train_images.shape[0], 28, 28, 1)
+test_images = test_images.reshape(test_images.shape[0], 28, 28, 1)
+
+Estas líneas están remodelando los datos de imágenes tanto para el conjunto de entrenamiento como para el conjunto de prueba. La forma original de las imágenes suele ser (número de imágenes, altura, ancho). Sin embargo, algunos modelos de aprendizaje automático, como las redes convolucionales, esperan una dimensión adicional para el canal de color (por ejemplo, RGB). Al agregar una dimensión adicional con valor 1, la forma final se convierte en (número de imágenes, altura, ancho, canales), donde los canales son 1 en este caso.
+
+train_images = train_images.astype('float32') / 255
+test_images = test_images.astype('float32') / 255
+
+Estas líneas convierten los datos de las imágenes a tipo de datos 'float32' y luego los normalizan dividiendo cada valor de píxel por 255. Al dividir por 255, los valores de píxel se escalan entre 0 y 1. Esto es importante porque muchos modelos de aprendizaje automático funcionan mejor con datos normalizados en ese rango.
+
+train_labels = tf.keras.utils.to_categorical(train_labels, 10)
+test_labels = tf.keras.utils.to_categorical(test_labels, 10)
+
+Estas líneas convierten las etiquetas de clase en una representación de codificación one-hot. La función to_categorical convierte las etiquetas enteras en una matriz binaria donde cada clase se representa como un vector binario con un valor de 1 en el índice correspondiente a la clase y 0 en los demás índices. Esto es útil para entrenar modelos de clasificación que esperan una representación categórica de las etiquetas.
+
+En resumen, el código realiza las siguientes transformaciones:
+
+Remodela los datos de las imágenes para que se ajusten a la entrada esperada por el modelo (agrega una dimensión adicional para los canales de color).
+Normaliza los valores de píxel de las imágenes para que estén en el rango de 0 a 1.
+Convierte las etiquetas de clase en una representación one-hot para su uso en modelos de clasificación.

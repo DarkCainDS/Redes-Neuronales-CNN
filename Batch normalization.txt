@@ -1,0 +1,21 @@
+Batch Normalizacion
+
+Es una herramienta que facilita mucho el descenso del gradiente y optimiza las redes convolucionales.
+
+La normalización es un procedimiento llevado a cabo sobre un conjunto de datos que busca estandarizar sus valores, reducir la cantidad de números que lo compone y en una escala homogénea de datos ayudando al descenso del gradiente “para converger mucho más rápido ” cuando se ejecuta el “Backpropagation” .
+
+Valores pequeños: típicamente entre 0 a 1
+
+Data homogénea: todos los píxeles tienen datos en el mismo rango.
+
+También, se puede dentro de las capas ocultas de la red neuronal llevar a cabo una normalización para así estandarizarla, a este proceso se le conoce como: “Batch Normalization”.
+
+Sigue la misma lógica matemática de cualquier normalización:
+
+Agrupo por lotes o “batches” dentro del mismo entrenamiento de la red neuronal, en consecuencia, obtengo la media del conjunto de entrenamiento.
+
+Luego obtengo la varianza o desviación estándar
+
+Luego a cada lote le resto la media y lo divido entre la desviación estándar. Este procedimiento se usa en la normalización de cualquier tipo de problema y así mismo ocurre dentro de la instancia en la red neural de las capas ocultas.
+
+Consiguiendo como resultado que sea una data estandarizada incluso dentro del entrenamiento dentro de la red ayudando a converger el algoritmo.

@@ -1,0 +1,14 @@
+
+2
+Capa de pooling
+A medida que se avanza en la profundidad de la red van aumentando el número de imágenes generadas por los filtros y por lo tanto el número de img a procesar lo que ocasionara una sobrecarga de computación.
+
+Para esto la capa de pooling nos servirá para disminuir el tamaño de las imágenes resultantes de la convolución gracias a un kernel (mas usados son: max[conserva el pixel mas alto de un grupo de pixeles] y avarage[saca el promedio de un grupo de pixeles]) que realizara una operación de agrupamiento. Gracias a esta operación se reduce el ruido mientras se conserva las características más importantes de la imagen.
+
+En resumen, mientras avancemos en las capas de la CNN:
+
+Se ira aumentando el número de canales en la imagen (imágenes resultantes de convolución)
+
+Se ira disminuyendo el tamaño de las imágenes debido a la capa de pooling.
+
+Estas 2 operaciones permitirán detectar resaltar objetos específicos en una imagen, sin tener problemas de computación.
